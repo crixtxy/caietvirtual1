@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caietul Meu - Caiet Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Caietul Meu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="editor.html">Editor</a></li>
+                <li><a href="lectii.html">Lecții</a></li>
+                <li><a href="caiet.html" class="active">Caiet</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-theme">🌙 Schimbă tema</button>
+    </header>
+    <main>
+        <section>
+            <h2>Notițele tale salvate</h2>
+            <div id="notite-lista">
+                <p>Nu există notițe încă. Creează una din <a href="editor.html">Editor</a>.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Caută o notiță</h2>
+            <input type="text" id="search-notes" placeholder="Caută după titlu sau conținut...">
+        </section>
+        <section>
+            <h2>Organizează notițele</h2>
+            <div class="filtrare">
+                <label for="sort-notes">Sortează după:</label>
+                <select id="sort-notes">
+                    <option value="date">Dată</option>
+                    <option value="title">Titlu</option>
+                </select>
+            </div>
+        </section>
+        <section>
+            <h2>Exportă notițele</h2>
+            <button id="export-notes">📁 Exportă tot</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Caiet Virtual. Notițele tale, organizate perfect.</p>
+    </footer>
+</body>
+</html>

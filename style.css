@@ -1,0 +1,211 @@
+/* style.css - Caiet Virtual */
+
+:root {
+    --bg-light: #f9f9f9;
+    --bg-dark: #1e1e2f;
+    --text-light: #1a1a1a;
+    --text-dark: #f1f1f1;
+    --primary: #4f46e5;
+    --secondary: #a78bfa;
+    --accent: #22d3ee;
+    --card: #ffffff;
+    --card-dark: #2c2c3a;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+body.dark {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeIn 0.8s ease-in;
+}
+
+section {
+    background: var(--card);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+body.dark section {
+    background: var(--card-dark);
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+button, select, input[type="text"] {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--secondary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover, select:hover {
+    background: var(--accent);
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+    background: #fff;
+    transition: background 0.3s;
+}
+
+body.dark textarea {
+    background: #333;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+.editor-actions, .filtrare {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+#note-preview-content {
+    white-space: pre-wrap;
+    background: #f0f0f0;
+    padding: 1rem;
+    border-radius: 10px;
+    min-height: 150px;
+}
+
+body.dark #note-preview-content {
+    background: #2a2a3a;
+}
+
+.lectie {
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--accent);
+    padding-left: 1rem;
+    animation: slideUp 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#toggle-theme {
+    float: right;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+#toggle-theme:hover {
+    background: white;
+    color: var(--primary);
+}
+
+#search-notes {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .editor-actions, .filtrare {
+        flex-direction: column;
+    }
+}

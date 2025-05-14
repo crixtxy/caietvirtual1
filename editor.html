@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - Caiet Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Editor Notițe</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="editor.html" class="active">Editor</a></li>
+                <li><a href="lectii.html">Lecții</a></li>
+                <li><a href="caiet.html">Caiet</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-theme">🌙 Schimbă tema</button>
+    </header>
+    <main>
+        <section>
+            <h2>Scrie-ți Notița</h2>
+            <div>
+                <label for="note-title">Titlu:</label>
+                <input type="text" id="note-title" placeholder="Introdu titlul notiței" />
+            </div>
+            <div>
+                <label for="note-content">Conținut:</label>
+                <textarea id="note-content" placeholder="Scrie aici notița ta"></textarea>
+            </div>
+            <div>
+                <h3>Previzualizare:</h3>
+                <div id="note-preview-content"></div>
+            </div>
+            <div class="editor-actions">
+                <button id="save-note">Salvează Notița</button>
+                <button id="clear-note">Șterge</button>
+                <button id="save-as-txt">Salvează ca .txt</button> <!-- Butonul pentru export -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Caiet Virtual. Totul într-un singur loc.</p>
+    </footer>
+</body>
+</html>

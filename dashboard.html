@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Caiet Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="editor.html">Editor</a></li>
+                <li><a href="lectii.html">Lecții</a></li>
+                <li><a href="caiet.html">Caiet</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-theme">🌙 Schimbă tema</button>
+    </header>
+    <main>
+        <section>
+            <h2>Rezumatul activității</h2>
+            <div class="statistici">
+                <p>Total notițe create: <span id="total-notes">0</span></p>
+                <p>Ultima actualizare: <span id="last-update">-</span></p>
+                <p>Număr de lecții parcurse: <span id="lessons-done">0</span></p>
+            </div>
+        </section>
+        <section>
+            <h2>Lista notițelor</h2>
+            <ul id="dashboard-note-list">
+                <li>Momentan nu există notițe salvate.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Notițe favorite</h2>
+            <div id="favorite-notes">
+                <p>Nu ai marcat nicio notiță ca favorită.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Setări rapide</h2>
+            <button onclick="window.location.href='editor.html'">➕ Creează notiță nouă</button>
+            <button id="clear-all">🧹 Șterge toate notițele</button>
+            <button id="download-backup">⬇️ Descarcă backup</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Caiet Virtual. Totul într-un singur loc.</p>
+    </footer>
+</body>
+</html>
