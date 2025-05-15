@@ -209,3 +209,6 @@ body.dark #note-preview-content {
         flex-direction: column;
     }
 }
+select#note-category {
+    min-width: 200px;
+}
