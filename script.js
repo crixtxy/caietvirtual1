@@ -27,10 +27,13 @@ if (saveNoteBtn) {
     saveNoteBtn.addEventListener('click', () => {
         const titlu = document.getElementById('note-title').value;
         const continut = document.getElementById('note-content').value;
+        const categorie = document.getElementById('note-category').value;
+
         if (titlu && continut) {
             const notita = {
                 titlu,
                 continut,
+                categorie,
                 data: new Date().toLocaleString(),
                 favorit: false
             };
@@ -38,6 +41,8 @@ if (saveNoteBtn) {
             notite.push(notita);
             localStorage.setItem('notite', JSON.stringify(notite));
             alert('Notiță salvată cu succes!');
+        } else {
+            alert('Completează titlul și conținutul notiței!');
         }
     });
 }
